@@ -19,11 +19,24 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter")
+
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	developmentOnly("org.springframework.boot:spring-boot-devtools") // 핫 리로드
+	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+	/* 이미지 업로드용 */
+	implementation("commons-io:commons-io:2.11.0") // 파일 핸들링
+	implementation("org.apache.tika:tika-core:2.9.0") // 파일 타입 확인 등
+
+	/* MySQL, Oauth, JWT, Mockito, Security, Webflux*/
+
 }
 
 kotlin {
