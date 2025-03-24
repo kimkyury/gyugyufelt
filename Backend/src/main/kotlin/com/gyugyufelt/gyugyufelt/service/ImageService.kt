@@ -1,7 +1,7 @@
 package com.gyugyufelt.gyugyufelt.service;
 
 
-import com.gyugyufelt.gyugyufelt.dto.ColorResult.ColorResult
+import com.gyugyufelt.gyugyufelt.dto.ColorResult
 import com.gyugyufelt.gyugyufelt.util.ColorExtractor
 import java.awt.image.BufferedImage;
 import org.springframework.stereotype.Service;

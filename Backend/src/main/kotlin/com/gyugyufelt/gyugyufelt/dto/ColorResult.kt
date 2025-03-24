@@ -1,4 +1,4 @@
-package com.gyugyufelt.gyugyufelt.dto.ColorResult;
+package com.gyugyufelt.gyugyufelt.dto;
 
 data class ColorResult(
     val hex: String,

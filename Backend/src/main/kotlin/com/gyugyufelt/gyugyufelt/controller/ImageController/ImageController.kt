@@ -1,6 +1,6 @@
 package com.gyugyufelt.gyugyufelt.controller.ImageController;
 
-import com.gyugyufelt.gyugyufelt.dto.ColorResult.ColorResult
+import com.gyugyufelt.gyugyufelt.dto.ColorResult
 import com.gyugyufelt.gyugyufelt.service.ImageService
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity;

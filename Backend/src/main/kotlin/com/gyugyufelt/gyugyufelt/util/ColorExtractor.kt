@@ -1,6 +1,6 @@
 package com.gyugyufelt.gyugyufelt.util
 
-import com.gyugyufelt.gyugyufelt.dto.ColorResult.ColorResult
+import com.gyugyufelt.gyugyufelt.dto.ColorResult
 import java.awt.Color
 
 import java.awt.image.BufferedImage
