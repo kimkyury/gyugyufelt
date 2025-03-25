@@ -13,16 +13,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/image")
- class ImageController {
-
-     private val imageService: ImageService = TODO()
-
-
+ class ImageController(private val imageService: ImageService ) {
     @PostMapping("/upload", consumes = [MediaType.MULTIPART_FORM_DATA_VALUE])
     fun uploadImage(@RequestPart image:MultipartFile) : ResponseEntity<List<ColorResult>>{
         val result = imageService.extractColors(image)
             return ResponseEntity.ok(result)
-
     }
-
 }

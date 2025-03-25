@@ -1,6 +1,7 @@
 plugins {
 	kotlin("jvm") version "1.9.25"
 	kotlin("plugin.spring") version "1.9.25"
+	kotlin("plugin.jpa") version "1.9.25"  // TODO: 꼭 필요한 지 확인
 	id("org.springframework.boot") version "3.4.4"
 	id("io.spring.dependency-management") version "1.1.7"
 }
@@ -35,7 +36,13 @@ dependencies {
 	implementation("commons-io:commons-io:2.11.0") // 파일 핸들링
 	implementation("org.apache.tika:tika-core:2.9.0") // 파일 타입 확인 등
 
-	/* MySQL, Oauth, JWT, Mockito, Security, Webflux*/
+	/* DB */
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.mariadb.jdbc:mariadb-java-client:3.1.4") // 최신 드라이버
+
+
+	/* , Oauth, JWT, Mockito, Security, Webflux */
+
 
 }
 
