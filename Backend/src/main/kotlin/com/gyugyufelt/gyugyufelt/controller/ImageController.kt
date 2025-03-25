@@ -1,4 +1,4 @@
-package com.gyugyufelt.gyugyufelt.controller.ImageController;
+package com.gyugyufelt.gyugyufelt.controller;
 
 import com.gyugyufelt.gyugyufelt.dto.ColorResult
 import com.gyugyufelt.gyugyufelt.service.ImageService

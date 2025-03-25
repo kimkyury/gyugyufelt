@@ -2,7 +2,6 @@ package com.gyugyufelt.gyugyufelt.util;
 
 import kotlin.math.pow
 import kotlin.math.sqrt
-import kotlin.random.Random
 
 data class Cluster(
     val center: FloatArray,
