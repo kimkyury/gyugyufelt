@@ -40,6 +40,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.mariadb.jdbc:mariadb-java-client:3.1.4") // 최신 드라이버
 
+	/* Swagger */
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6")
 
 	/* , Oauth, JWT, Mockito, Security, Webflux */
 
