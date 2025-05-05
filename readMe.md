@@ -1,12 +1,12 @@
 # Environment Setup
 
-## Database (MariaDB) Setup
+## Database (PostgreSQL) Setup
 
 1. Navigate to the `./Environment` directory.
 2. Run the following command in your terminal:
 
    ```bash
-   docker compose -f docker-compose.dev.yml up -d
+   docker compose -f docker-compose-dev.yml up -d
     ```
 
 ## Accessing Swagger UI
