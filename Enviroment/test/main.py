@@ -1,6 +1,10 @@
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("KKRMCPServer")
+
+if __name__ == "__main__":
+	mcp.run()
+	
 	
 @mcp.resource("kyu://state") # API의 GET과 같은 역할
 def get_kyu_state() -> str:
@@ -28,6 +32,3 @@ def prompt(first:str, second: str, third: str) -> str:
 """
 
 
-if __name__ == "__main__":
-	mcp.run(transport='stdio')
-	ㅊ
