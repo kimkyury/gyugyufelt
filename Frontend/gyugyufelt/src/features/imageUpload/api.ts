@@ -1,22 +1,19 @@
+import { API_BASE_URL } from '../../lib/apiClient'
 import axios from 'axios';
 
+import { ColorInfo } from '../../types/color';
 
-// Output DTO
-export interface ColorInfo {
-    hex: string;
-    ratio: number;
-}
 
 export const uploadImage = async (image: File): Promise<ColorInfo[]> => {
     const formData = new FormData();
     formData.append('image', image);
 
     const response = await axios.post<ColorInfo[]>(
-        'http://localhost:8080/api/image/upload',
+        `${API_BASE_URL}/api/image/upload`,
         formData,
         {
             headers: {
-                'Conent-Type': 'multipart/form-data'
+                'Content-Type': 'multipart/form-data'
             },
         }
     );
