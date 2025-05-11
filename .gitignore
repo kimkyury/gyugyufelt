@@ -199,3 +199,13 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/kotlin,python
+# IDE 설정 무시
+.idea/
+.vscode/
+*.iml
+
+# 빌드/캐시/Gradle 관련
+.gradle/
+build/
+out/
+bin/
