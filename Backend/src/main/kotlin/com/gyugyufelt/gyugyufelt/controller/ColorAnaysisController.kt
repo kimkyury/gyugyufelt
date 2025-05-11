@@ -2,6 +2,7 @@ package com.gyugyufelt.gyugyufelt.controller
 
 import com.gyugyufelt.gyugyufelt.dto.ColorAnalysisResponse
 import com.gyugyufelt.gyugyufelt.service.ColorAnalysisService
+import io.swagger.v3.oas.annotations.Operation
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -14,6 +15,7 @@ class ColorAnalysisController(
     private val colorAnalysisService: ColorAnalysisService
 ) {
 
+    @Operation(summary="테스트", description = "테스트 API입니다.")
     @PostMapping
     fun analyzeColors(
         @RequestParam k: Int,
