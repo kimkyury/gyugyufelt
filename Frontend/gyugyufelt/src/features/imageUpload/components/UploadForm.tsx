@@ -85,45 +85,4 @@ export const UploadForm = () => {
     );
 
 
-    /*
-  return (
-      <div className="flex flex-col items-center">
-          <input
-              type="file"
-              accept="image/*"
-              onChange={handleFileChange}
-              className="mb-4"
-          />
-          {preview && <img src={preview} alt="preview" className="max-w-xs rounded-xl shadow mb-4" />}
-
-          <button // 업로드 버튼 
-              onClick={handleUpload}
-              disabled={!image || loading}  // 이미지가 없거나 업로드 중이면
-              className="bg-black text-white px-6 py-2 rounded-xl hover:bg-gray-800 transition"
-          >
-              {loading ? '업로드 중...' : '색상 추출하기'}
-          </button>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
-              {colors.map((color, idx) => (
-                  <div
-                      key={idx}
-                      className="flex flex-col items-center"
-                  >
-                      <div
-                          className="w-16 h-16 rounded-full border"
-                          style={{ backgroundColor: color.hex }}
-                      ></div>
-                      <span
-                          className="mt-1 text-sm text-gray-600">
-                          {color.hex}
-                      </span>
-                      <span className="text-xs text-gray-400">
-                          {color.ratio.toFixed(2)}%
-                      </span>
-                  </div>
-              ))}
-          </div>
-      </div>
-  ); */
 }
