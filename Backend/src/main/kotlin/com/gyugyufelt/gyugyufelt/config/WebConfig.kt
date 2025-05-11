@@ -11,7 +11,7 @@ class WebConfig : WebMvcConfigurer {
         registry.addMapping("/api/**")
             .allowedOrigins("http://localhost:5173") // local
             .allowedHeaders("*")
-            .allowedMethods("GET", "PSOT", "PUT", "DELETE")
+            .allowedMethods("GET", "POST", "PUT", "DELETE")
             .allowCredentials(true)
     }
 }
