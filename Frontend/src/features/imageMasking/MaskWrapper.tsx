@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { RefObject } from 'react';
-import MaskCanvas from './MaskCanvas';
-import { Stage } from 'konva/lib/Stage'
-import { sendMaskedImage } from './api';
+import { MaskCanvas } from '@features/imageMasking/MaskCanvas';
+import { sendMaskedImage } from '@features/imageMasking/api';
 import Konva from 'konva';
 
 export const MaskWrapper: React.FC = () => {

@@ -10,7 +10,7 @@ interface MaskCanvasProps {
 
 // FC: 함수형 컴포넌트
 // 자동으로 children 속성 타입이 포함됨
-const MaskCanvas: React.FC<MaskCanvasProps> = ({ imageUrl, stageRef }) => {
+export const MaskCanvas: React.FC<MaskCanvasProps> = ({ imageUrl, stageRef }) => {
     const [image] = useImage(imageUrl)
     const [lines, setLines] = useState<any[]>([]);
     const isDrawing = useRef(false);  // 화면에 표시될 건 아니지만 기억해야 하는 상태
@@ -66,5 +66,3 @@ const MaskCanvas: React.FC<MaskCanvasProps> = ({ imageUrl, stageRef }) => {
         </Stage>
     );
 }
-
-export default MaskCanvas;

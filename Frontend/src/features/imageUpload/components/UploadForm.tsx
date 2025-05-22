@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { uploadImage } from '../api'
-import { ColorInfo } from '../../../types/color';
+import { uploadImage } from '@features/imageUpload/api';
+import { ColorInfo } from '@/types/Color';
 import axios from 'axios';
 
 export const UploadForm = () => {

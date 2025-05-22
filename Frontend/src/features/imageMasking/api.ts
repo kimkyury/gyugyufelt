@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../../lib/apiClient'
+import { API_BASE_URL } from '@lib/apiClient'
 import axios from 'axios';
 
 export async function sendMaskedImage(formData: FormData) {

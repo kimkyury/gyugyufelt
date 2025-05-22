@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "baseUrl": "src",
+        "paths": {
+            "@/*": [
+                "*"
+            ],
+            "@components/*": [
+                "components/*"
+            ],
+            "@features/*": [
+                "features/*"
+            ],
+            "@utils/*": [
+                "utils/*"
+            ],
+            "@types/*": [
+                "types/*"
+            ],
+            "@pages/*": [
+                "pages/*"
+            ],
+            "@lib/*": [
+                "lib/*"
+            ],
+            "@api/*": [
+                "api/*"
+            ]
+        },
+        "jsx": "react-jsx",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "src"
+    ]
+}

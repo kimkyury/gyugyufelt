@@ -1,6 +1,5 @@
 import React from 'react'
-import { UploadForm } from '../features/imageUpload/components/UploadForm'
-import { MaskWrapper } from '../features/imageMasking/MaskWrapper'
+import { MaskWrapper } from '@features/imageMasking/MaskWrapper'
 
 export default function Masking() {
     return (
