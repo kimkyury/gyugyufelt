@@ -1,6 +1,5 @@
-import React, { useRef, useState, RefObject } from 'react';
+import React, { useRef, useState } from 'react';
 import { Stage, Layer, Image as KonvaImage, Line } from 'react-konva';
-import Konva from 'konva';
 import useImage from 'use-image';
 import { MaskCanvasProps } from '@/types/maskingTypes';
 import { useBrush } from '@features/imageMasking/hooks/useBrush'
@@ -19,18 +18,30 @@ export const MaskCanvas: React.FC<MaskCanvasProps> = ({ imageUrl, stageRef }) =>
     const handleMouseDown = (e: any) => {
         isDrawing.current = true;
         const pos = e.target.getStage().getPointerPosition();
-        setLines([...lines, { tool: 'brush', points: [pos.x, pos.y] }]);
-    }
+        setLines((prevLines) => [
+            ...prevLines,
+            {
+                tool: 'brush',
+                points: [pos.x, pos.y],
+                color: brushColor,
+                size: brushSize,
+            },
+        ]);
+    };
+
 
     const handleMouseMove = (e: any) => {
         if (!isDrawing.current) return;
         const stage = e.target.getStage();
         const point = stage.getPointerPosition();
-        const lastLine = lines[lines.length - 1]; // 가장 최근 추가된 선
-        lastLine.points = lastLine.points.concat([point.x, point.y]); // 현재 좌표 붙이기
-        lines.splice(lines.length - 1, 1, lastLine); // 마지막 선을 갱신 
-        setLines([...lines]);
-    }
+
+        setLines((prevLines) => {
+            const lastLine = { ...prevLines[prevLines.length - 1] };
+            const newPoints = lastLine.points.concat([point.x, point.y]);
+            return [...prevLines.slice(0, -1), { ...lastLine, points: newPoints }];
+        });
+    };
+
 
     const handleMouseUp = () => {
         isDrawing.current = false;
@@ -50,7 +61,7 @@ export const MaskCanvas: React.FC<MaskCanvasProps> = ({ imageUrl, stageRef }) =>
                 width={image?.width || 500}
                 height={image?.height || 500}
                 onMouseDown={handleMouseDown}
-                onMousemove={handleMouseMove}
+                onMouseMove={handleMouseMove}
                 onMouseup={handleMouseUp}
             >
                 <Layer>

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { MaskCanvas } from '@features/imageMasking/MaskCanvas';
+import { MaskCanvas } from '@features/imageMasking/components/MaskCanvas';
 import { sendMaskedImage } from '@features/imageMasking/api';
 import Konva from 'konva';
 

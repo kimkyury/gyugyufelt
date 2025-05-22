@@ -1,6 +1,6 @@
 import { API_BASE_URL } from '@lib/apiClient'
 import axios from 'axios';
-import { ColorInfo } from '@/types/Color';
+import { ColorInfo } from '@/types/color';
 
 
 
