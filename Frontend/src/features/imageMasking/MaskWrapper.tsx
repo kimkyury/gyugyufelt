@@ -1,41 +1,34 @@
-import React, { useRef, useState } from 'react';
-import { MaskCanvas } from '@features/imageMasking/components/MaskCanvas';
-import { sendMaskedImage } from '@features/imageMasking/api';
-import Konva from 'konva';
+import React, { useState } from 'react';
+import { MaskCanvas } from './components/MaskCanvas';
+import { useMasking } from './hooks/useMasking';
+import { sendMaskedImage } from './api';
+
 
 export const MaskWrapper: React.FC = () => {
-    const [image, setImage] = useState<File | null>(null);
-    const [preview, setPreview] = useState<string>('');
-    const [loading, setLoading] = useState(false);
-    const stageRef = useRef<Konva.Stage | null>(null);
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (file) {
-            setImage(file);
-            setPreview(URL.createObjectURL(file));
-        }
-    };
+    const {
+        image,
+        preview,
+        stageRef,
+        handleFileChange,
+        getMaskDataURL
+    } = useMasking();
+
+    const [loading, setLoading] = useState(false);
 
     const handleExport = async () => {
         if (!stageRef.current) return;
+
+        const dataURL = getMaskDataURL();
+        if (!dataURL) return;
         setLoading(true);
 
-        try {
-            const dataURL = stageRef.current.toDataURL({ pixelRatio: 1 });
-            const blob = await (await fetch(dataURL)).blob();
-            const formData = new FormData();
-            formData.append('maskImage', blob);
-            if (image) formData.append('originalImage', image);
+        const blob = await (await fetch(dataURL)).blob();
+        const formData = new FormData();
+        formData.append('maskImage', blob);
+        if (image) formData.append('originalImage', image);
 
-            await sendMaskedImage(formData);
-            alert('분석 요청이 전송되었습니다!');
-        } catch (err) {
-            alert('분석 요청 중 오류가 발생했어요.');
-            console.error(err);
-        } finally {
-            setLoading(false);
-        }
+        await sendMaskedImage(formData);
     };
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-6 py-12">
