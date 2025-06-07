@@ -1,14 +1,14 @@
-import { API_BASE_URL } from '../../lib/apiClient'
+import { API_BASE_URL } from '@lib/apiClient'
 import axios from 'axios';
+import { ColorInfo } from '@/types/color';
 
-import { ColorInfo } from '../../types/color';
 
 
 export const uploadImage = async (image: File): Promise<ColorInfo[]> => {
     const formData = new FormData();
     formData.append('image', image);
 
-    const response = await axios.post<ColorInfo[]>(
+    const res = await axios.post<ColorInfo[]>(
         `${API_BASE_URL}/api/image/upload`,
         formData,
         {
@@ -18,5 +18,5 @@ export const uploadImage = async (image: File): Promise<ColorInfo[]> => {
         }
     );
 
-    return response.data;
+    return res.data;
 }
