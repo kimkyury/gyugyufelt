@@ -19,7 +19,7 @@ export default function Navbar() {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-t items-center">
-                        <Link to="/patterns" className="hover:text-primary">도안</Link>
+                        <Link to="/masking" className="hover:text-primary">도안</Link>
                         <Link to="/community" className="hover:text-primary">커뮤니티</Link>
                         <Link to="/mypage" className="hover:text-primary">마이페이지</Link>
                         <button className="px-3 py-1 bg-primary text-white rounded-lg text-sm">로그인</button>
@@ -33,7 +33,7 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 {isOpen && (
                     <div className="md:hidden mt-2 space-y-2">
-                        <Link to="/patterns" className="block">도안</Link>
+                        <Link to="/masking" className="block">도안</Link>
                         <Link to="/community" className="block">커뮤니티</Link>
                         <Link to="/mypage" className="block">마이페이지</Link>
                         <button className="w-full py-2 bg-primary text-white rounded-lg text-sm">로그인</button>

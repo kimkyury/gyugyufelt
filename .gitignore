@@ -209,3 +209,4 @@ pyrightconfig.json
 build/
 out/
 bin/
+.vite/
