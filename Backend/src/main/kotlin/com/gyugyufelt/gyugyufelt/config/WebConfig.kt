@@ -6,16 +6,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 @Configuration
 class WebConfig : WebMvcConfigurer {
-<<<<<<< HEAD
-    override fun addCorsMappings(registry: CorsRegistry) {
-        registry.addMapping("/api/**")
-            .allowedOrigins("http://localhost:5173")
-            .allowedMethods("GET", "POST", "PUT", "DELETE")
-            .allowedHeaders("*")
-            .allowCredentials(true)
-    }
-}
-=======
 
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/api/**")
@@ -25,4 +15,3 @@ class WebConfig : WebMvcConfigurer {
             .allowCredentials(true)
     }
 }
->>>>>>> feature/cors
